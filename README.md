@@ -20,6 +20,7 @@ def estruturar_comando(role="", action="", args=""):
 ```
 
 Seguem os eventos: <br>
+Evento 
 
 - Vez do jogador (sua_vez) 
 - Emissor: Servidor 
@@ -47,23 +48,32 @@ p2.socket.sendall(mensagem)
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
 - Descrição: Este trecho de código é acionado quando o servidor envia uma mensagem com o cabeçalho "adversario". Quando isso ocorre, o código imprime uma mensagem no console indicando que é a vez do jogador adversário realizar uma jogada. Além disso, ele atualiza a interface do usuário para refletir essa informação.<br>
 
+```python
+elif msg_servidor["head"] == "adversario":
+                        self.widgets["status"]["label"].config(text="Turno do adversário! ")
+                        self.widgets["bottom_status"]["label"].config(text=f"{self.username} | Turnos Restantes: {self.p2.contador_turnos}".title())
+```
 
-<p>Codigo...</p>
+Evento "Contagem regressiva":
 
-Evento "Vez do jogador":
-
-- Vez do jogador (sua_vez): Indica se é a vez do jogador realizar uma ação (movimento ou colocação de barreira).
+- Contagem Regressiva (contagem_regressiva): Faz uma contagem regressiva de 3 a 1 para o inicío do jogo.
 - Emissor: Servidor
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
-- Descrição: Esta mensagem é enviada pelo servidor para informar ao jogador que é a sua vez de realizar uma ação no jogo. Pode se referir a movimentar uma peça ou colocar uma barreira, dependendo das regras do jogo. A interface do jogador pode ser atualizada para refletir essa informação, e o jogador pode ser notificado de que é o momento de fazer sua jogada.
+- Descrição: Esta mensagem é enviada pelo servidor para informar aos jogadores que a partida irá começar depois daquela contagem, para que ambos tenha noção do início do jogo.
 
 <h2>2. Estados</h2>
 
-<p>Turno Atual<br>
+<p>Turno Atual:<br>
 
 Valores: 0 (Jogador 1) ou 1 (Jogador 2)<br>
 Descrição: Define qual jogador deve realizar a próxima ação.<br>
-Exemplo no código:</p>
+
+
+<p>Vez do jogador1 :<br>
+Descrição: O jogador 1 é o primeiro a jogar, se movimentando pelo tabuleiro, e joga novamente após o jogador 2 colocar uma barreira<br>
+
+<p>Vez do jogador2 :<br>
+Descrição: O jogador 2 é o segundo a jogar, colocando barreiras, e joga após o jogador 1 se movimentar duas vezes<br>
 
 <h2> 3 - Mensagens</h2>
 
@@ -71,14 +81,7 @@ Bem-Vindo (bem_vindo)<br>
 - Emissor: Servidor<br>
 - Receptor: Jogador<br>
 - Descrição: Saudação ao jogador, informando qual é o seu papel no jogo.<br>
-Exemplo no código:
 
-<p>Contagem Regressiva (contagem_regressiva)<br>
-
-Emissor: Servidor<br>
-Receptor: Jogadores<br>
-Descrição: Informa aos jogadores que o jogo começará em breve, contando regressivamente.<br>
-Exemplo no código:</p>
 
 <h1>Estruturação e organização do projeto</h1>
 
