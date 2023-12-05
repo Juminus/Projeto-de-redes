@@ -50,6 +50,13 @@ p2.socket.sendall(mensagem)
 
 <p>Codigo...</p>
 
+Evento "Vez do jogador":
+
+- Vez do jogador (sua_vez): Indica se é a vez do jogador realizar uma ação (movimento ou colocação de barreira).
+- Emissor: Servidor
+- Receptor: Jogador (Jogador 1 ou Jogador 2).
+- Descrição: Esta mensagem é enviada pelo servidor para informar ao jogador que é a sua vez de realizar uma ação no jogo. Pode se referir a movimentar uma peça ou colocar uma barreira, dependendo das regras do jogo. A interface do jogador pode ser atualizada para refletir essa informação, e o jogador pode ser notificado de que é o momento de fazer sua jogada.
+
 <h2>2. Estados</h2>
 
 <p>Turno Atual<br>
