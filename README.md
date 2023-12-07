@@ -264,7 +264,7 @@ views - Pasta filha de src, onde se localiza o jogo
 <p>É um projeto da matéria de redes do curso de Ciência da Computação que tem o propósito de fornecer uma experiência de jogo interativa e desafiadora para dois jogadores, envolvendo estratégia. O jogo busca proporcionar diversão enquanto promove a competição amigável entre os participantes.</p>
 
 <h1 align = 'center'>Requisitos Mínimos</h1>
-<p>Uma computador com sistema operacional Linux ou Windowns</p>
+<p>Uma computador com sistema operacional Linux ou Windows</p>
 <p>Python 3 instalado</p>
 <p>Conexão de rede entre os jogadores</p>
 <p>Capacidade de executar sockets TCP</p>
