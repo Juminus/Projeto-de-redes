@@ -45,6 +45,7 @@ elif msg_servidor["head"] == "bem_vindo":
 - Emissor: Servidor 
 - Receptor: Jogador (Jogador 1 ou Jogador 2)
 - Descrição: Indica que é a vez do jogador realizar uma ação (movimento ou colocação de barreira).<br>
+
 Código:
 ```python
 elif msg_servidor["head"] == "sua_vez":
@@ -67,6 +68,7 @@ p2.socket.sendall(mensagem)
 - Emissor: Servidor.
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
 - Descrição: Este trecho de código é acionado quando o servidor envia uma mensagem com o cabeçalho "adversario". Quando isso ocorre, o código imprime uma mensagem no console indicando que é a vez do jogador adversário realizar uma jogada. Além disso, ele atualiza a interface do usuário para refletir essa informação.<br>
+
 Código:
 ```python
 elif msg_servidor["head"] == "adversario":
@@ -80,6 +82,7 @@ elif msg_servidor["head"] == "adversario":
 - Emissor: Servidor
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
 - Descrição: Esta mensagem é enviada pelo servidor para informar aos jogadores que a partida irá começar depois daquela contagem, para que ambos tenha noção do início do jogo.<br>
+
 Código:
 ```python
 elif msg_servidor["head"] == "contagem_regressiva":
@@ -91,6 +94,7 @@ elif msg_servidor["head"] == "contagem_regressiva":
 - Emissor: Servidor
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
 - Descrição: O servidor envia uma mensagem indicando uma jogada realizada por um dos jogadores. O código chama a função `receber_jogada` para processar e aplicar a jogada recebida.<br>
+
 Código:
 ```python
 elif msg_servidor["head"] == "jogada":
@@ -102,6 +106,7 @@ elif msg_servidor["head"] == "jogada":
 - Emissor: Servidor
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
 - Descrição: O servidor envia uma mensagem indicando uma jogada realizada por um dos jogadores. O código chama a função `receber_jogada` para processar e aplicar a jogada recebida.<br>
+
 Código:
 ```python
 elif msg_servidor["head"] == "fim_de_jogo":
