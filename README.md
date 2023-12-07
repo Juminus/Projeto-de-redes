@@ -21,13 +21,14 @@ def estruturar_comando(role="", action="", args=""):
 
 Seguem os eventos: <br>
 
-### Evento "Bem vindo"
+### Evento "Bem vindo":
 
 - Tela de espera pelo jogador 2 (`bem_vindo`) 
 - Emissor: Servidor 
 - Receptor: Jogador 1
-- Descrição: Indica que após o jogador 1 clicar em conectar aparecerá em sua tela uma mensagem falando que o servidor está a espera o jogador 2 se conectar. Essa mensagem só desaparece depois de .<br>
-Código:<br>
+- Descrição: Indica que após o jogador 1 clicar em conectar aparecerá em sua tela uma mensagem falando que o servidor está a espera o jogador 2 se conectar. Essa mensagem só desaparece depois depois que o jogador 2 se conectar.<br>
+
+Código:
 ```python
 elif msg_servidor["head"] == "bem_vindo":
                     self.username = msg_servidor["body"]
@@ -66,7 +67,7 @@ p2.socket.sendall(mensagem)
 - Emissor: Servidor.
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
 - Descrição: Este trecho de código é acionado quando o servidor envia uma mensagem com o cabeçalho "adversario". Quando isso ocorre, o código imprime uma mensagem no console indicando que é a vez do jogador adversário realizar uma jogada. Além disso, ele atualiza a interface do usuário para refletir essa informação.<br>
-Código:<br>
+Código:
 ```python
 elif msg_servidor["head"] == "adversario":
                         self.widgets["status"]["label"].config(text="Turno do adversário! ")
@@ -78,8 +79,8 @@ elif msg_servidor["head"] == "adversario":
 - Contagem Regressiva (`contagem_regressiva`): Faz uma contagem regressiva de 3 a 1 para o inicío do jogo.
 - Emissor: Servidor
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
-- Descrição: Esta mensagem é enviada pelo servidor para informar aos jogadores que a partida irá começar depois daquela contagem, para que ambos tenha noção do início do jogo.
-Código:<br>
+- Descrição: Esta mensagem é enviada pelo servidor para informar aos jogadores que a partida irá começar depois daquela contagem, para que ambos tenha noção do início do jogo.<br>
+Código:
 ```python
 elif msg_servidor["head"] == "contagem_regressiva":
                     self.widgets["status"]["label"].config(text=msg_servidor["body"])
@@ -89,8 +90,8 @@ elif msg_servidor["head"] == "contagem_regressiva":
 - Jogada (`jogada`): Indica que algum jogador fez uma jogada.
 - Emissor: Servidor
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
-- Descrição: O servidor envia uma mensagem indicando uma jogada realizada por um dos jogadores. O código chama a função `receber_jogada` para processar e aplicar a jogada recebida.
-Código:<br>
+- Descrição: O servidor envia uma mensagem indicando uma jogada realizada por um dos jogadores. O código chama a função `receber_jogada` para processar e aplicar a jogada recebida.<br>
+Código:
 ```python
 elif msg_servidor["head"] == "jogada":
                     self.receber_jogada(msg_servidor["from"], msg_servidor["body"])
@@ -100,8 +101,8 @@ elif msg_servidor["head"] == "jogada":
 - Final do jogo (`jogada`): Faz uma contagem regressiva de 3 a 1 para o inicío do jogo.
 - Emissor: Servidor
 - Receptor: Jogador (Jogador 1 ou Jogador 2).
-- Descrição: O servidor envia uma mensagem indicando uma jogada realizada por um dos jogadores. O código chama a função `receber_jogada` para processar e aplicar a jogada recebida.
-Código:<br>
+- Descrição: O servidor envia uma mensagem indicando uma jogada realizada por um dos jogadores. O código chama a função `receber_jogada` para processar e aplicar a jogada recebida.<br>
+Código:
 ```python
 elif msg_servidor["head"] == "fim_de_jogo":
                     self.fim_de_jogo(msg_servidor["body"])
@@ -178,7 +179,7 @@ Role: jogador1 ou jogador2<br>
 Ação: jogada<br>
 
 
-<h1>Estruturação e organização do projeto</h1>
+<h1 align = 'center'>Estruturação e organização do projeto</h1>
 
 |--src<br>
 |-----models<br>
