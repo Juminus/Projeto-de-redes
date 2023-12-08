@@ -1,13 +1,13 @@
 # Documentação PeBa
 <h1 align = 'center'>Introdução</h1>
-<p>Este projeto consiste em um jogo de tabuleiro multiplayer implementado em Python, onde dois jogadores competem por 12 turnos. A comunicação entre os jogadores é realizada por meio de sockets TCP, garantindo uma transmissão confiável de dados.</p>
+<p>Este projeto, carinhosamente nomeado como PeBa, consiste em um jogo de tabuleiro de autoria própria do grupo, multijogador e implementado em Python, onde dois jogadores competem por 12 turnos. A comunicação entre os jogadores é realizada por meio de sockets TCP, garantindo uma transmissão confiável de dados.</p> 
 
 <h1 align = 'center'>Funcionamento do Jogo</h1>
-<p>O jogo é baseado em turnos, com o Jogador 1 realizando duas movimentações consecutivas, seguido pelo Jogador 2, que coloca uma barreira. Esse ciclo se repete por 12 turnos. O objetivo do Jogador 1 é atingir seu destino, enquanto o Jogador 2 busca impedir seu progresso com barreiras estratégicas.</p>
+<p>O jogo é baseado em turnos, com o Jogador 1 realizando duas movimentações consecutivas, seguido pelo Jogador 2, que coloca uma barreira. Esse ciclo se repete por 12 turnos. O objetivo do Jogador 1 é atingir seu destino, partindo da posição 1x1 do tabuleiro até a posição 8x8, enquanto o Jogador 2 busca impedir seu progresso com barreiras estratégicas.</p>
 
 <h1 align = 'center'>Protocolo de Comunicação</h1>
 <h2>1. Eventos</h2>
-As trocas de informações, cliente e servidor, são feitas através de arquivo JSON estruturados da seguinte forma:<br>
+As trocas de informações, cliente e servidor, são feitas através de dicionários, posteriormente convertidos em arquivo JSON estruturados da seguinte forma:<br>
 
 ```python
 def estruturar_comando(role="", action="", args=""):
@@ -195,8 +195,8 @@ Ação: jogada<br>
 |-----------setting.py<br>
 |-----views<br>
 |----------tabuleiro.py<br>
-|-----client.py<br>
-|-----server.py<br>
+|--client.py<br>
+|--server.py<br>
 
 Descrição:<br>
 
@@ -258,10 +258,10 @@ views - Pasta filha de src, onde se localiza o jogo
 - Atualiza a interface do usuário no tabuleiro com base nas mensagens recebidas.<br>
 
 ## Fluxo de Mensagens: 
-1. Jogador 1 se move usando teclas de seta.
+1. Jogador 1 se move usando teclas WASD.
 2. Tabuleiro envia mensagem "jogada" para o servidor com as coordenadas do movimento.
 3. Servidor repassa a mensagem para Jogador 2.
-4. Jogador 2 coloca uma barreira usando o mouse.
+4. Jogador 2 coloca uma barreira usando o botão esquerdo do mouse.
 5. Tabuleiro envia mensagem "jogada" para o servidor com as coordenadas da barreira.
 6. Servidor repassa a mensagem para Jogador 1.
 7. Repete até o fim do jogo.
